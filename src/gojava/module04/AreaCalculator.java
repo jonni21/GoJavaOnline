@@ -5,8 +5,8 @@ public class AreaCalculator {
     // Calculates triangle area using Heron's formula
     public double calculateTriangleArea(double firstSide, double secondSide, double thirdSide) {
         double semiperimeter = (firstSide + secondSide + thirdSide) / 2;
-        double triangleArea = Math.sqrt(semiperimeter * (semiperimeter - firstSide) *
-                (semiperimeter - secondSide) * (semiperimeter - thirdSide));
+        double triangleArea = Math.sqrt(semiperimeter * (semiperimeter - firstSide)
+                * (semiperimeter - secondSide) * (semiperimeter - thirdSide));
         return triangleArea;
     }
 
