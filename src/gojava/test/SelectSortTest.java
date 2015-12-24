@@ -23,5 +23,9 @@ public class SelectSortTest {
     @Test
     public void shouldSortArrayDescent() throws Exception {
         SelectSort mySelectSort = new SelectSort();
+        int[] arrayOfIntegers = {1, 2, 2, 3, 4, 9, 5, 4, 6, 7, 8, 0};
+        int[] expected = {9, 8, 7, 6, 5, 4, 4, 3, 2, 2, 1, 0};
+        Assert.assertArrayEquals("failure - arrays are not equal", expected,
+                                 mySelectSort.sortDescent(arrayOfIntegers));
     }
 }
