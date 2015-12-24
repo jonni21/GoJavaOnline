@@ -15,8 +15,8 @@ public class SelectSortTest {
         int[] arrayOfIntegers = {-23, 45, -99, 52, 0, 36, 41, 14, -425, 85, 41, 23, 7758, 54, 1};
         int[] expected = Arrays.copyOf(arrayOfIntegers, arrayOfIntegers.length);
         Arrays.sort(expected);
-        Assert.assertArrayEquals("failure - arrays not same", expected, mySelectSort.sortAscent(
-                arrayOfIntegers));
+        Assert.assertArrayEquals("failure - arrays not same", expected,
+                                 mySelectSort.sortAscent(arrayOfIntegers));
     }
 
     @Test
