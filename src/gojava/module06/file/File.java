@@ -2,6 +2,8 @@ package gojava.module06.file;
 
 public abstract class File {
 
+    private String name;
+
     public void rename() {
 
         try {
@@ -10,6 +12,13 @@ public abstract class File {
             System.err.println("IllegalStateException: " + e.getMessage());
         } finally {
             //
+        }
+    }
+
+    public void open() throws NoSuchFileException{
+
+        if (name == null) {
+            throw new NoSuchFileException();
         }
     }
 }
