@@ -1,11 +1,16 @@
 package gojava.module08.file;
 
-public abstract class File {
+import java.util.Comparator;
 
-    private String name;
+public abstract class File implements Comparable<File> {
+
+    protected String name;
 
     public File(String name) {
         this.name = name;
+    }
+
+    public File() {
     }
 
     public void setName(String name) {
@@ -21,5 +26,10 @@ public abstract class File {
         return "File{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(File file) {
+        return getName().compareTo(file.getName());
     }
 }
