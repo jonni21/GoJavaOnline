@@ -1,7 +1,5 @@
 package gojava.module08.file;
 
-import java.util.Comparator;
-
 public abstract class File implements Comparable<File> {
 
     protected String name;

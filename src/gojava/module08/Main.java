@@ -23,9 +23,10 @@ public class Main {
 
         PrintCollectionAsATable.print(home.getFilesList());
 
-//        TreeSet<File> sortedList = home.getFilesList().stream()
-//                .collect(Collectors.toCollection(TreeSet::new));
-//        PrintCollectionAsATable.print(sortedList);
+        TreeSet<File> sortedList = home.getFilesList().stream()
+                .collect(Collectors.toCollection(TreeSet::new));
+        System.out.println("\nSorted collection: ");
+        PrintCollectionAsATable.print(sortedList);
 
 //        List<File> filesList = new ArrayList<>();
 //        filesList.add(new PictureFile("animal.jpg"));
