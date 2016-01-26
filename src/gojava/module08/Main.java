@@ -2,7 +2,6 @@ package gojava.module08;
 
 import gojava.module08.file.*;
 
-import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
@@ -27,15 +26,6 @@ public class Main {
                 .collect(Collectors.toCollection(TreeSet::new));
         System.out.println("\nSorted collection: ");
         PrintCollectionAsATable.print(sortedList);
-
-//        List<File> filesList = new ArrayList<>();
-//        filesList.add(new PictureFile("animal.jpg"));
-//        filesList.add(new PictureFile("screenshot.png"));
-//        filesList.add(new TextFile("sometext.doc"));
-//        filesList.add(new AudioFile("nirvana.mp3"));
-//        filesList.add(new TextFile("passwords.txt"));
-//        filesList.add(new AudioFile("1.wav"));
-
 
     }
 }
