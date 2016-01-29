@@ -15,10 +15,10 @@ public class Main {
         home.addFile(new AudioFile("nirvana.mp3"));
         home.addFile(new TextFile("contract.doc"));
         home.addFile(new PictureFile("girls.png"));
-        home.addFile(new AudioFile("Oasis - Wonderwall.mp3"));
+        home.addFile(new AudioFile("wonderwall.mp3"));
         home.addFile(new PictureFile("animals.bmp"));
         home.addFile(new TextFile("readme.txt"));
-        home.addFile(new AudioFile("Stereophonics - Maybe Tomorrow.mp3"));
+        home.addFile(new AudioFile("stereophonics.mp3"));
 
         PrintCollectionAsATable.print(home.getFilesList());
 

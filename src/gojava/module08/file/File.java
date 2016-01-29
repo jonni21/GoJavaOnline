@@ -2,7 +2,7 @@ package gojava.module08.file;
 
 public abstract class File implements Comparable<File> {
 
-    protected String name;
+    private String name;
 
     public File(String name) {
         this.name = name;
@@ -21,9 +21,7 @@ public abstract class File implements Comparable<File> {
 
     @Override
     public String toString() {
-        return "File{" +
-                "name='" + name + '\'' +
-                '}';
+        return name;
     }
 
     @Override
