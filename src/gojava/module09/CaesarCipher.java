@@ -50,7 +50,7 @@ public class CaesarCipher {
                 textCodePoints[i] = cipherTextCodePoints[i] - key;
             } else {
                 textCodePoints[i] = (LAST_LETTER_CODE_POINT + 1)
-                        - ((cipherTextCodePoints[i] + key) % LAST_LETTER_CODE_POINT);
+                        - (FIRST_LETTER_CODE_POINT - (cipherTextCodePoints[i] - key));
             }
         }
 
