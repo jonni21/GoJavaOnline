@@ -18,19 +18,19 @@ public class CaesarCipher {
     final static private int LAST_LETTER_CODE_POINT = "z".codePointAt(0);
 
     public static String encode(String text, int key) {
-        int[] textCodePoints = new int[text.length()];
+        int[] plainTextCodePoints = new int[text.length()];
         int[] cipherTextCodePoints = new int[text.length()];
 
         for (int i = 0; i < text.length(); i++) {
-            textCodePoints[i] = text.codePointAt(i);
+            plainTextCodePoints[i] = text.codePointAt(i);
         }
 
         for (int i = 0; i < text.length(); i++) {
-            if ((textCodePoints[i] + key) <= LAST_LETTER_CODE_POINT) {
-                cipherTextCodePoints[i] = textCodePoints[i] + key;
+            if ((plainTextCodePoints[i] + key) <= LAST_LETTER_CODE_POINT) {
+                cipherTextCodePoints[i] = plainTextCodePoints[i] + key;
             } else {
                 cipherTextCodePoints[i] = (FIRST_LETTER_CODE_POINT - 1)
-                        + ((textCodePoints[i] + key) % LAST_LETTER_CODE_POINT);
+                        + ((plainTextCodePoints[i] + key) % LAST_LETTER_CODE_POINT);
             }
         }
 
@@ -38,7 +38,7 @@ public class CaesarCipher {
     }
 
     public static String decode(String text, int key) {
-        int[] textCodePoints = new int[text.length()];
+        int[] plainTextCodePoints = new int[text.length()];
         int[] cipherTextCodePoints = new int[text.length()];
 
         for (int i = 0; i < text.length(); i++) {
@@ -47,13 +47,13 @@ public class CaesarCipher {
 
         for (int i = 0; i < text.length(); i++) {
             if ((cipherTextCodePoints[i] - key) >= FIRST_LETTER_CODE_POINT) {
-                textCodePoints[i] = cipherTextCodePoints[i] - key;
+                plainTextCodePoints[i] = cipherTextCodePoints[i] - key;
             } else {
-                textCodePoints[i] = (LAST_LETTER_CODE_POINT + 1)
+                plainTextCodePoints[i] = (LAST_LETTER_CODE_POINT + 1)
                         - (FIRST_LETTER_CODE_POINT - (cipherTextCodePoints[i] - key));
             }
         }
 
-        return new String(textCodePoints, 0, textCodePoints.length);
+        return new String(plainTextCodePoints, 0, plainTextCodePoints.length);
     }
 }
