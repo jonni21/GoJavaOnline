@@ -18,6 +18,7 @@ public class CaesarCipher {
     final static private int LAST_LETTER_CODE_POINT = "z".codePointAt(0);
 
     public static String encode(String text, int key) {
+        text = text.toLowerCase();
         int[] plainTextCodePoints = new int[text.length()];
         int[] cipherTextCodePoints = new int[text.length()];
 
@@ -38,6 +39,7 @@ public class CaesarCipher {
     }
 
     public static String decode(String text, int key) {
+        text = text.toLowerCase();
         int[] plainTextCodePoints = new int[text.length()];
         int[] cipherTextCodePoints = new int[text.length()];
 
