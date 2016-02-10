@@ -1,5 +1,7 @@
 package gojava.module09;
 
+import java.io.*;
+
 /**
  * This class implements Caesar Cipher code.
  *
@@ -57,5 +59,22 @@ public class CaesarCipher {
         }
 
         return new String(plainTextCodePoints, 0, plainTextCodePoints.length);
+    }
+
+    public static void encodeToFile(String text, int key, String fileName) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
+            bw.write(encode(text, key));
+        } catch (IOException e) {
+            System.err.println(e.toString());
+        }
+    }
+
+    public static String decodeFromFile(String fileName, int key) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            return decode(br.readLine(), key);
+        } catch (IOException e) {
+            System.err.println(e.toString());
+        }
+        return "";
     }
 }
